@@ -1,0 +1,27 @@
+Ejercicio
+
+Sistema que maneja peliculas
+
+1.- Crear un nuevo proyecto Maven ProyectoPeliculas
+	groupid : cl.curso
+	artefactid : ProyectoPeliculas
+2.- Crear los sgtes. paquetes:
+	cl.curso.pelicula.main
+	cl.curso.pelicula.pojo
+	cl.curso.pelicula.services
+	cl.curso.pelicula.services.impl	
+	cl.curso.pelicula.repositorio
+	cl.curso.pelicula.repositorio.impl
+3.- POJO Pelicula
+	Integer idPelicula
+	String  nombrePelicula
+	String  directorPelicula
+	String	generoPelicula
+4.- operaciones CRUD a implementar:
+	listar todas las peliculas
+	agregar nueva pelicula
+	modificar el director dado el id de la pelicula
+	eliminar una pelicula por id
+	buscar peliculas por genero
+	buscar por director
+	buscar por id

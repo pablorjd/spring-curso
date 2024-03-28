@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Archivo para la configuracion de JPA (Java Persistent API) JPA esta 
+	construida segun estandar ORM (Object Relational Mapping) -->
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<!-- Nombre de la unidad de persistencia -->
+	<persistence-unit name="BDCurso">
+		<description> Ejemplo Crud básico Hibernate JPA</description>
+
+		<!-- Indicamos el “provider” que es la implementación de JPA que estamos 
+			usando. En nuestro ejemplo hibernate, pero existen otros proveedores como 
+			EclipseLink: -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<!-- Definiremos las clases que representan “entidades”. Por cada clase 
+			debemos utilizar la etiqueta <class> cuyo contenido debe incluir el paquete 
+			y el nombre de la clase: -->
+
+		<!-- Añadimos las propiedades de conexión a la base de datos MySQL -->
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/cursobd?serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.user" value="usuario" />
+			<property name="javax.persistence.jdbc.password"
+				value="password" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

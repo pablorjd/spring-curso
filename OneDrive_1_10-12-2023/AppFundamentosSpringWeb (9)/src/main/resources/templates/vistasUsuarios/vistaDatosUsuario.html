@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Datos del usuario</title>
+</head>
+<body>
+	<h1>Datos del usuario buscado</h1>
+	
+	<h2>Los datos del usuario son : </h2>
+	
+	<span th:text = "${usuario.nombre}"></span>
+	<span th:text = "${usuario.apellido}"></span>
+	
+	<span th:if = "${usuario.email}" th:text = "${usuario.email}"></span>
+	<span th:if = "${usuario.email == null}" th:text = " 'El usuario no tiene email' "></span>
+</body>
+</html>

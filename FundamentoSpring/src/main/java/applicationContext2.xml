@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+		<!-- Bean se inyectara por dependencias en el contructor de Defensa -->
+	<bean id="posicion" class="cl.curso.id.posicion.PosicionAsignada"></bean>
+    <bean id="defensa" class="cl.curso.id.funcion.Defensa">
+		<constructor-arg ref="posicion"></constructor-arg>
+	</bean>
+	
+	<!-- 
+		para dejar que la clase ya no sea singleton se debe de cambiar el scope que por defecto esta singleton
+		y para cambiarlo se debe de asignar el scope en prototype
+	 -->
+	<bean id="delantero" class="cl.curso.id.funcion.Delantero" scope="prototype">
+		<property name="posicion" ref="posicion"></property>
+	</bean>
+	
+	
+	<bean id="arquero" 
+		  class="cl.curso.id.funcion.Arquero" 
+		  scope="singleton" 
+		  init-method="initBeanArquero" 
+		  destroy-method="destroyBeanArquero">
+	</bean>
+
+   
+
+</beans>

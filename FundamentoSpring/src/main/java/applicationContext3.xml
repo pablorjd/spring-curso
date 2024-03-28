@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- con esta propiedad scanea nuestro package y de acuerdo a la anotación que le demos a nuestros bean una 
+	anotacion sobre la clase que vamos a delegar el trabajo de ser un bean -->
+	<context:component-scan base-package="cl.curso.id.anotaciones"></context:component-scan>
+	
+</beans>
